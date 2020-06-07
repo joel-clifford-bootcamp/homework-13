@@ -3,9 +3,9 @@ const burger = require('../models/burger.js');
 
 const router = express.Router();
 
-
 router.get('/', (req, res) => {
-    burger.selectAll(data => {
+    console.log("controlle -> get")
+    burger.all(data => {
         const hbsObject = {
             burgers: data
         };
@@ -18,7 +18,7 @@ router.post('/api/burgers', (req, res) => {
     const burger_name = req.body.burger_name;
 
     if(burger_name.length <= 50){
-        burger.insertOne(burger_name, result => {
+        burger.create(burger_name, result => {
             res.json({id: result.insertedId});
         });
     }

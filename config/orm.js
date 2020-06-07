@@ -9,14 +9,12 @@ const orm = {
      * @return {[]} []
      */
     selectAll: (cb) => {
-        
         const queryString = "SELECT * FROM burgers";
-        con.query(queryString), (err, results) => {
-
+        con.query(queryString, (err, results) => {
             if (err) throw err;
-            console.table(results);
+            console.table(results.data);
             cb(results)
-        }
+        });
     },
     /**
      * Insert a new burger into the burgers table
@@ -27,11 +25,10 @@ const orm = {
     insertOne: (burger_name, cb) => {
         const queryString = "INSERT INTO burgers (burger_name) VALUES (?)"
         con.query(queryString, [burger_name], (err, results) => {
-
             if (err) throw err;
             console.log(results);
             cb(results);
-        })
+        });
     },
     /**
      * Update the devoured status of a burger in the burgers table
@@ -46,7 +43,7 @@ const orm = {
             if (err) throw err;
             console.log(results);
             cb(results);
-        })
+        });
     }
 }
 
