@@ -1,4 +1,4 @@
-const con = require("./config/connection.js");
+const con = require("../config/connection.js");
 
 
 const orm = {
