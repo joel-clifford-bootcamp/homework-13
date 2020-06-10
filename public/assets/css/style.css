@@ -1,0 +1,12 @@
+body{
+    background-color: antiquewhite;
+}
+
+#burgerImage{
+    width:240px;
+    height:240px;
+    border-radius:50%;
+    object-fit: cover;
+    border-width: 4px;
+    border-style: solid;
+}

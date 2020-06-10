@@ -4,19 +4,18 @@ const burger = require('../models/burger.js');
 const router = express.Router();
 
 router.get('/', (req, res) => {
-    console.log("controlle -> get")
+    // console.log("GET")
     burger.all(data => {
         const hbsObject = {
             burgers: data
         };
-        console.log(hbsObject);
         res.render('index',hbsObject);
     });
 });
 
 router.post('/api/burgers', (req, res) => {
+    // console.log("POST")
     const burger_name = req.body.burger_name;
-
     if(burger_name.length <= 50){
         burger.create(burger_name, result => {
             res.json({id: result.insertedId});
@@ -27,6 +26,7 @@ router.post('/api/burgers', (req, res) => {
 });
 
 router.put('/api/burgers/:id', (req, res) => {
+    // console.log("PUT")
     const id = req.params.id;
     burger.devour(id, result => {
         if(result.changedRows === 0)
@@ -35,5 +35,12 @@ router.put('/api/burgers/:id', (req, res) => {
         res.status(200).end()
     })
 });
+
+router.delete('/api/burgers/clear', (req, res) => {
+    // console.log('DELETE')
+    burger.clear(result => {
+        res.status(200).end();
+    })
+})
 
 module.exports = router;
