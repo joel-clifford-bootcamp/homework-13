@@ -1,6 +1,8 @@
 const mysql = require('mysql');
 
-const con = mysql.createConnection({
+const con = process.env.JAWSDB_URL ? 
+mysql.createConnection(process.env.JAWSDB_URL) : 
+mysql.createConnection({
   host: "localhost",
   port: 3306,
   user: "root",
