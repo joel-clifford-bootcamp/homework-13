@@ -42,8 +42,8 @@ const orm = {
      * @param {[function]} cb [callback function]
      */
     deleteAll: (cb) => {
-        const queryString = "DELETE FROM burgers";
-        con.query(queryString, [devoured], (err, results) => {
+        const queryString = "DELETE FROM burgers WHERE devoured = ?";
+        con.query(queryString, [true], (err, results) => {
             if (err) throw err;
             cb(results);
         })
