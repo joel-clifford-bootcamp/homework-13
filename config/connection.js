@@ -1,6 +1,6 @@
 const mysql = require('mysql');
 
-let con 
+let con;
 
 
 if(process.env.JAWSDB_URL) { 
@@ -24,4 +24,4 @@ con.connect(function(err) {
   });
   
   module.exports = con;
-  
+ 
