@@ -21,8 +21,10 @@ const orm = {
     insertOne: (burger_name, cb) => {
         const queryString = "INSERT INTO burgers (burger_name) VALUES (?)";
         con.query(queryString, [burger_name], (err, results) => {
-            if (err) throw err;
-            cb(results);
+            if (err) 
+                console.log(err);
+            else 
+                cb(results);
         });
     },
     /**
