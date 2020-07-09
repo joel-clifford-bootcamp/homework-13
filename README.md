@@ -1,5 +1,11 @@
 # Node Express Handlebars
 
+## Overview
+
+Simple express and mysql app to track a burger wishlist and check off those that have been eater. Submit burger names to add to the list, click "Devour" to mark them as eaten.
+
+## Assignment Details
+
 ### Overview
 
 In this assignment, you'll create a burger logger with MySQL, Node, Express, Handlebars and a homemade ORM (yum!). Be sure to follow the MVC design pattern; use Node and MySQL to query and route data in your app, and Handlebars to generate your HTML.
