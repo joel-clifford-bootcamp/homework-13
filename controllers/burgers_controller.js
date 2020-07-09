@@ -16,13 +16,13 @@ router.get('/', (req, res) => {
 router.post('/api/burgers', (req, res) => {
     // console.log("POST")
     const burger_name = req.body.burger_name;
-    if(burger_name.length <= 50){
+    if(burger_name.length <= 50 && burger_name.length > 0 ){
         burger.create(burger_name, result => {
             res.json({id: result.insertedId});
         });
     }
     else
-        res.status(500).send('Burger name too long!')
+        res.status(500);
 });
 
 router.put('/api/burgers/:id', (req, res) => {
