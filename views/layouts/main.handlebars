@@ -9,11 +9,39 @@
 	</head>
 	<body>
 		<div class="container-fluid">
-			<div class="jumbotron">
-				<h1 class="display-4">Eat-Da-Burger!</h1>
-				<p class="lead">Track your burger bucket list</p>
+			<div class="jumbotron bg-primary text-white">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-5">
+							<h1 class="display-4">Eat-Da-Burger!</h1>
+							<p class="lead">Track your burger bucket list</p>
+							<img id="burgerImage" src="/assets/images/burger.gif" alt="burger">
+						</div>
+
+						<div class="col-md-7">
+							<div class="container well">
+								<div class="row">
+									<div class="col">
+										<form class="form-inline text-dark">
+											<label>Add a New Burger</label>
+
+											<div class="form-group">
+												<input class="align-baseline" type="text" id="burgerName" maxlength="50" placeholder="Burger name">
+											</div>   
+
+											<button id="addBurger" class="btn-sm btn-primary" type="submit">Save</button>
+										</form>
+									</div>
+								</div>
+								
+								<div class="row">
+									{{{ body }}}
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
 			</div>
-			{{{ body }}}
 		</div>
 
 		<script src="https://code.jquery.com/jquery.js"></script>

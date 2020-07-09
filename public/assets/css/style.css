@@ -2,7 +2,26 @@ body{
     background-color: antiquewhite;
 }
 
+.well{
+    height: 100%;
+    background-color: white;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.form-inline{
+    width: 100%;
+    padding-bottom: 15px;
+}
+
+.form-group {
+    margin-left: 15px;
+    margin-right: 10px;
+}
+
+
 #burgerImage{
+    margin-bottom: 15px;
     width:240px;
     height:240px;
     border-radius:50%;
